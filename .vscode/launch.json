@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug",
+      "cwd": "${workspaceFolder}",
+      "executable": "test.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "runToEntryPoint": "main",
+      "servertype": "openocd",
+      "configFiles": [
+        "interface/nulink.cfg",
+        "target/numicro.cfg",
+        "openocd.cfg"
+      ]
+    }
+  ]
+}
