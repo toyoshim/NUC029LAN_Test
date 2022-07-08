@@ -1,12 +1,22 @@
 # NuTiny-NUC029L Experiments with open tools
-## Required
+## Prerequiments
 - VS Code + Cortex-Debug
-- OpenOCD
 - arm-none-eabi-gcc
 
+## OpenOCD
+```
+$ git submodule update --init
+$ make tools/bin/openocd
+```
+
+This version contains a up-ported version of OpenOCD-Nevoton's flash/nor/numicro.c
+
+## Program download
+```
+load
+```
+In the DEBUG CONSOLE.
+
 ## TODO
-- program download
-- gdb_memory_map
-- breakpoint (maybe related to gdb_memory_map?)
 - semihost
 - make depend
