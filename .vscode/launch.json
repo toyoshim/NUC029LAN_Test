@@ -9,10 +9,12 @@
       "type": "cortex-debug",
       "runToEntryPoint": "main",
       "servertype": "openocd",
+      "searchDir": [
+        "tools/share/openocd/scripts"
+      ],
       "configFiles": [
         "interface/nulink.cfg",
-        "target/numicro.cfg",
-        "openocd.cfg"
+        "target/numicroM0.cfg"
       ]
     }
   ]
