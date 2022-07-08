@@ -14,7 +14,7 @@
       ],
       "configFiles": [
         "interface/nulink.cfg",
-        "target/numicroM0.cfg"
+        "target/numicro.cfg"
       ]
     }
   ]

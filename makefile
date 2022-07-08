@@ -39,7 +39,7 @@ clean:
 	rm -f *.o *.map $(TARGET).hex $(TARGET).elf
 
 tools/bin/openocd:
-	(cd OpenOCD-Nuvoton && ./bootstrap && \
+	(cd openocd && ./bootstrap && \
 	 ./configure --prefix=$(PWD)/tools && \
  	 make && make install)
  

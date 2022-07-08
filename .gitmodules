@@ -4,3 +4,6 @@
 [submodule "OpenOCD-Nuvoton"]
 	path = OpenOCD-Nuvoton
 	url = git@github.com:toyoshim/OpenOCD-Nuvoton.git
+[submodule "openocd"]
+	path = openocd
+	url = git@github.com:toyoshim/openocd.git
