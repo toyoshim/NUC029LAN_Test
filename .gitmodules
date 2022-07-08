@@ -1,0 +1,3 @@
+[submodule "NUC029xANBSP"]
+	path = NUC029xANBSP
+	url = https://github.com/OpenNuvoton/NUC029xANBSP.git
