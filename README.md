@@ -21,6 +21,10 @@ See `FIXME: comment` in the port CL.
 ## Semihosting
 - Just works with defining OS_USE_SEMIHOSTING
 
-## HowTo
-- Type `Cmd + Shift + B` => Build
-- Type `F5` => Debug
+## C Debug
+- `RUN AND DEBUG` > `Debug C Hello`
+
+## Embedded Rust Debug
+- Follow [The Embedded Rust Book](https://docs.rust-embedded.org/book/intro/install.html)
+for the initial installation.
+- `RUN AND DEBUG` > `Debug Rust Hello`

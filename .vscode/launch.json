@@ -2,8 +2,9 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug",
+      "name": "Debug C Hello",
       "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Make",
       "executable": "test.elf",
       "request": "launch",
       "type": "cortex-debug",
@@ -16,10 +17,35 @@
       "searchDir": [
         "tools/share/openocd/scripts"
       ],
+      "device": "NUC029LAN",
       "configFiles": [
         "interface/nulink.cfg",
         "target/numicro.cfg"
-      ]
+      ],
+      //"svdFile": "${workspaceRoot}/.vscode/NUC029LAN.svd",
+    },
+    {
+      "name": "Debug Rust Hello",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Cargo Build (debug)",
+      "executable": "rust/target/thumbv6m-none-eabi/debug/nuc029lan-test",
+      "request": "launch",
+      "type": "cortex-debug",
+      "runToEntryPoint": "main",
+      "showDevDebugOutput": "parsed",
+      "preLaunchCommands": [
+        "monitor arm semihosting enable"
+      ],
+      "servertype": "openocd",
+      "searchDir": [
+        "tools/share/openocd/scripts"
+      ],
+      "device": "NUC029LAN",
+      "configFiles": [
+        "interface/nulink.cfg",
+        "target/numicro.cfg"
+      ],
+      //"svdFile": "${workspaceRoot}/.vscode/NUC029LAN.svd",
     }
   ]
 }

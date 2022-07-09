@@ -1,0 +1,10 @@
+# See https://docs.rust-embedded.org/book/
+
+[target.'cfg(all(target_arch = "arm", target_os = "none"))']
+rustflags = [
+  "-C", "link-arg=--nmagic",
+  "-C", "link-arg=-Tlink.x"
+]
+
+[build]
+target = "thumbv6m-none-eabi"

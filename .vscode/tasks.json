@@ -9,6 +9,23 @@
         "kind": "build",
         "isDefault": true
       }
+    },
+    {
+      "label": "Cargo Build (debug)",
+      "type": "process",
+      "options": {
+        "cwd": "${workspaceFolder}/rust"
+      },
+      "command": "cargo",
+      "args": [
+        "build"
+      ],
+      "problemMatcher": [
+        "$rustc"
+      ],
+      "group": {
+        "kind": "build"
+      }
     }
   ]
 }
