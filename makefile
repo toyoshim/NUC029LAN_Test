@@ -6,12 +6,13 @@ CFLAGS	= \
 	-INUC029xANBSP/Library/CMSIS/Include \
 	-INUC029xANBSP/Library/StdDriver/inc \
 	-INUC029xANBSP/Library/Device/Nuvoton/NUC029xAN/Include \
-	-DOS_USE_SEMIHOSTING
+	-DOS_USE_SEMIHOSTING  # Stop defining this for release, running without gdb
 LDFLAGS	= \
 	-T NUC029xANBSP/Library/Device/Nuvoton/NUC029xAN/Source/GCC/gcc_arm.ld \
 	-Xlinker --gc-section -Wl,-Map,$(TARGET).map --specs=nano.specs
 OBJS	= main.o \
-	_syscalls.o startup_NUC029xAN.o system_NUC029xAN.o
+	_syscalls.o startup_NUC029xAN.o system_NUC029xAN.o \
+	gpio.o timer.o
 TARGET	= test
 
 $(TARGET).hex:  $(TARGET).elf

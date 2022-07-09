@@ -15,6 +15,5 @@ This version contains a up-ported version of OpenOCD-Nevoton's flash/nor/numicro
 - Just works with defining OS_USE_SEMIHOSTING
 
 ## HowTo
-
 - Type `Cmd + Shift + B` => Build
 - Type `F5` => Debug

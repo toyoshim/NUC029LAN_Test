@@ -7,8 +7,8 @@
       "executable": "test.elf",
       "request": "launch",
       "type": "cortex-debug",
-      "runToMain" true,
-      "showDevDebugOutput": "none",
+      "runToEntryPoint": "main",
+      "showDevDebugOutput": "parsed",
       "preLaunchCommands": [
         "monitor arm semihosting enable"
       ],
