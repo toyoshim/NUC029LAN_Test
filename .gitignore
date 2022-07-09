@@ -3,4 +3,5 @@
 *.log
 *.map
 *.o
+.vscode/.*
 tools

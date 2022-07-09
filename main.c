@@ -1,35 +1,23 @@
-/******************************************************************************
- * @file     main.c
- * @version  V1.00
- * $Revision: 1 $
- * $Date: 14/10/01 10:36a $
- * @brief    Template project for NUC029 series MCU
- *
- * @note
- * Copyright (C) 2014 Nuvoton Technology Corp. All rights reserved.
- *****************************************************************************/
 #include <stdio.h>
 #include "NUC029xAN.h"
 
-extern char GetChar(void);
+extern void initialise_monitor_handles(void);
 
 void SYS_Init(void) {
-  /* Unlock protected registers */
+#if defined(OS_USE_SEMIHOSTING)
+  initialise_monitor_handles();
+#endif
+
+  // Unlock protected registers
   SYS_UnlockReg();
 
-  /* Enable IP clock */
+  // Enable IP clock
   CLK->APBCLK = CLK_APBCLK_UART0_EN_Msk;
 
-  /* Update System Core Clock */
-  /* User can use SystemCoreClockUpdate() to calculate SystemCoreClock and
-   * cyclesPerUs automatically. */
+  // Update System Core Clock
   SystemCoreClockUpdate();
 
-  /* Set P3 multi-function pins for UART0 RXD and TXD  */
-  SYS->P3_MFP &= ~(SYS_MFP_P30_Msk | SYS_MFP_P31_Msk);
-  SYS->P3_MFP |= (SYS_MFP_P30_RXD0 | SYS_MFP_P31_TXD0);
-
-  /* Lock protected registers */
+  // Lock protected registers
   SYS_LockReg();
 }
 
@@ -38,18 +26,8 @@ int main() {
 
   SYS_Init();
 
-  /* Init UART0 to 115200-8n1 for print message */
-  UART_Open(UART0, 115200);
-
-  printf("Simple Demo Code\n\n");
-
-  printf("Please Input Any Key\n\n");
+  printf("Hello via semihost\n\n");
 
   do {
-    printf("Input: ");
-    ch = GetChar();
-    printf("%c\n", ch);
   } while (1);
 }
-
-/*** (C) COPYRIGHT 2014 Nuvoton Technology Corp. ***/

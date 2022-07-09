@@ -7,7 +7,11 @@
       "executable": "test.elf",
       "request": "launch",
       "type": "cortex-debug",
-      "runToEntryPoint": "main",
+      "runToMain" true,
+      "showDevDebugOutput": "none",
+      "preLaunchCommands": [
+        "monitor arm semihosting enable"
+      ],
       "servertype": "openocd",
       "searchDir": [
         "tools/share/openocd/scripts"
